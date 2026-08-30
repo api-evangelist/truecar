@@ -1,7 +1,18 @@
 aid: truecar
 name: TrueCar
-description: 'TrueCar is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  TrueCar is a Santa Monica, California based online automotive marketplace that connects car buyers
+  with a nationwide network of certified dealers, publishing upfront, transparent pricing on new and
+  used vehicles alongside what other buyers in the same area actually paid. The company operates
+  truecar.com, the TrueCar+ end-to-end digital retail experience, a sell-your-car / instant cash offer
+  service, and white-label car-buying programs for affinity partners such as credit unions, insurers
+  and large employers. Founded in 2005 by Scott Painter, TrueCar traded on NASDAQ as TRUE until
+  January 2026, when Fair Holdings, Inc. - led by Painter, with PenFed Credit Union, Zurich North
+  America, AutoNation and Atlantic Coast Automotive - completed a $227 million take-private
+  acquisition. TrueCar publishes no public developer program, API reference, or machine-readable
+  contract; its dealer, DMS and OEM integrations are arranged privately through the dealer portal
+  under commercial agreement.
+image: https://tcblogprod.wpengine.com/wp-content/themes/truecar/img/TrueCar-black.png
 url: https://raw.githubusercontent.com/api-evangelist/truecar/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +23,13 @@ created: '2026-08-30'
 modified: '2026-08-30'
 tags:
 - Company
+- Automotive
+- Marketplace
+- Car Buying
+- Vehicle Pricing
+- Dealers
+- Consumer
+- E-Commerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,53 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/truecar-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/truecar_stock/
+  url: https://www.truecar.com/
+- type: Blog
+  url: https://www.truecar.com/blog/
+- type: BlogRSS
+  url: https://www.truecar.com/blog/feed/
+- type: GitHubOrganization
+  url: https://github.com/TrueCar
+- type: TermsOfService
+  url: https://www.truecar.com/terms/
+- type: PrivacyPolicy
+  url: https://www.truecar.com/privacy/
+- type: Support
+  url: https://www.truecar.com/contact-us/
+- type: LLMsTxt
+  url: llms/truecar-llms.txt
+- type: Packages
+  url: packages/truecar-packages.yml
+- type: Plans
+  url: plans/truecar-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/truecar-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/truecar-lifecycle.yml
+x-enrichment:
+  date: '2026-08-30'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    developer.truecar.com and docs.truecar.com resolve only to TrueCar's wildcard CloudFront
+    origin and answer a bare 404, and no TrueCar host serves an OpenAPI, GraphQL SDL, WSDL,
+    MCP manifest or any /.well-known document - TrueCar ships an end-user car-buying marketplace,
+    and its only integration surface is bespoke dealer/DMS wiring arranged privately through
+    dealerportal.truecar.com.
+  evidence:
+  - url: https://developer.truecar.com/
+    status: 404
+  - url: https://api.truecar.com/openapi.json
+    status: 404
+  - url: https://www.truecar.com/.well-known/api-catalog
+    status: 404
+  - url: https://status.truecar.com/
+    status: 0
+  checked: '2026-08-30'

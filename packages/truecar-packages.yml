@@ -1,0 +1,169 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  registry.npmjs.org (metadata + /-/v1/search), rubygems.org/api/v1, search.maven.org/solrsearch,
+  pypi.org/pypi, crates.io/api/v1, packagist.org/search.json and azuresearch-usnc.nuget.org,
+  cross-checked against api.github.com/orgs/TrueCar/repos.
+note: >-
+  TrueCar publishes NO API client libraries. Every first-party package below is open-source
+  developer tooling or an internally-republished fork - a React/Redux app scaffold, a LaunchDarkly
+  React helper, a graphql-ruby decorator, an ML model-serialization runtime - and none of them
+  wraps a TrueCar API, because TrueCar publishes no public API. For that reason NO `SDKs` pointer
+  is wired into apis.yml: sdk_count for this provider is genuinely zero, and claiming otherwise
+  would credit TrueCar with a developer surface it does not ship. Decay signal - the
+  github.com/TrueCar organization was ARCHIVED on 2024-11-04, and the most recent release of any
+  first-party package is graphql-decorate 1.0.4 on 2022-08-16.
+sdk_count: 0
+package_count: 10
+api_clients: 0
+packages:
+- name: gluestick
+  registry: npm
+  url: https://www.npmjs.com/package/gluestick
+  repository: https://github.com/TrueCar/gluestick
+  official: true
+  api_client: false
+  kind: framework-cli
+  license: MIT
+  version: 4.6.6
+  published: '2019-03-27'
+  note: >-
+    CLI for building universal React/Redux applications; TrueCar's best-known open-source
+    project (356 GitHub stars). Repository archived.
+- name: gluestick-cli
+  registry: npm
+  url: https://www.npmjs.com/package/gluestick-cli
+  repository: https://github.com/TrueCar/gluestick
+  official: true
+  api_client: false
+  kind: framework-cli
+  license: MIT
+  version: 4.6.6
+  published: '2019-03-27'
+  note: Companion entry point published from the same gluestick repository.
+- name: gluestick-shared
+  registry: npm
+  url: https://www.npmjs.com/package/gluestick-shared
+  repository: https://github.com/TrueCar/gluestick-shared
+  official: true
+  api_client: false
+  kind: library
+  license: MIT
+  version: 1.0.0-rc.11
+  published: '2017-03-16'
+  note: Shared code between the GlueStick CLI and the applications it generates.
+- name: babel-plugin-gluestick
+  registry: npm
+  url: https://www.npmjs.com/package/babel-plugin-gluestick
+  repository: https://github.com/TrueCar/babel-plugin-gluestick
+  official: true
+  api_client: false
+  kind: build-plugin
+  license: MIT
+  version: 0.0.1
+  published: '2016-08-26'
+  note: >-
+    Babel transform for GlueStick apps. npm metadata carries no repository field; attribution
+    is from the github.com/TrueCar repository of the same name.
+- name: react-launch-darkly
+  registry: npm
+  url: https://www.npmjs.com/package/react-launch-darkly
+  repository: https://github.com/TrueCar/react-launch-darkly
+  official: true
+  api_client: false
+  kind: third-party-integration-helper
+  license: MIT
+  version: 4.0.1
+  published: '2019-04-23'
+  note: >-
+    React component helpers for LaunchDarkly feature flags - wraps LaunchDarkly's SDK, not a
+    TrueCar API.
+- name: truecar-resize-observer-polyfill
+  registry: npm
+  url: https://www.npmjs.com/package/truecar-resize-observer-polyfill
+  repository: https://github.com/que-etc/resize-observer-polyfill
+  official: true
+  fork: true
+  api_client: false
+  kind: polyfill
+  license: MIT
+  version: 1.5.1
+  published: '2021-08-05'
+  note: >-
+    TrueCar-namespaced republication of que-etc/resize-observer-polyfill. First-party publish,
+    upstream code - repository metadata still points at the upstream project.
+- name: truecar-css-vars-ponyfill
+  registry: npm
+  url: https://www.npmjs.com/package/truecar-css-vars-ponyfill
+  repository: https://github.com/jhildenbiddle/css-vars-ponyfill
+  official: true
+  fork: true
+  api_client: false
+  kind: polyfill
+  license: MIT
+  version: 2.1.3
+  published: '2020-01-23'
+  note: TrueCar-namespaced republication of jhildenbiddle/css-vars-ponyfill.
+- name: react-transition-group-v2
+  registry: npm
+  url: https://www.npmjs.com/package/react-transition-group-v2
+  repository: https://github.com/truecar/react-transition-group
+  official: true
+  fork: true
+  api_client: false
+  kind: ui-library
+  license: BSD-3-Clause
+  version: 4.3.0
+  published: '2020-02-27'
+  note: TrueCar fork of react-transition-group, published from github.com/truecar.
+- name: graphql-decorate
+  registry: rubygems
+  url: https://rubygems.org/gems/graphql-decorate
+  repository: https://github.com/TrueCar/graphql-decorate
+  official: true
+  api_client: false
+  kind: library
+  version: 1.0.4
+  published: '2022-08-16'
+  note: >-
+    Decorator integration for the graphql-ruby gem - the most recently released first-party
+    TrueCar package, and evidence that TrueCar's own internal API layer is GraphQL. The GraphQL
+    endpoint itself is internal to truecar.com and is neither published nor documented.
+- name: com.truecar.mleap
+  registry: maven-central
+  url: https://central.sonatype.com/namespace/com.truecar.mleap
+  repository: https://github.com/TrueCar/mleap
+  official: true
+  api_client: false
+  kind: ml-runtime
+  version: 0.1.5
+  published: '2016-06-05'
+  note: >-
+    10 artifacts (mleap-core, mleap-runtime, mleap-spark, mleap-serialization, mleap-package for
+    Scala 2.10 and 2.11), all last released 2016-06-05. MLeap originated at TrueCar and moved to
+    the independent combust/mleap project; the com.truecar.mleap coordinates are frozen.
+registries_checked:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=truecar
+  result: 8 TrueCar-attributed packages found (listed above)
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/gems/graphql-decorate.json
+  result: 1 first-party gem found
+- registry: maven-central
+  endpoint: https://search.maven.org/solrsearch/select?q=g:com.truecar.mleap
+  result: 10 artifacts under com.truecar.mleap, all v0.1.5 (2016-06-05)
+- registry: pypi
+  endpoint: https://pypi.org/pypi/truecar/json
+  result: 404 - no first-party TrueCar package
+- registry: crates.io
+  endpoint: https://crates.io/api/v1/crates?q=truecar
+  result: 0 results
+- registry: nuget
+  endpoint: https://azuresearch-usnc.nuget.org/query?q=truecar
+  result: 0 results
+- registry: packagist
+  endpoint: https://packagist.org/search.json?q=truecar
+  result: no first-party TrueCar package (only unrelated third-party matches)
+- registry: pkg.go.dev
+  endpoint: https://pkg.go.dev/search?q=truecar
+  result: 200, no module matching TrueCar in the result set

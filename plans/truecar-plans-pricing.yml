@@ -1,0 +1,29 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://www.truecar.com/ (consumer product, free to use), and a search of TrueCar's public
+  surface plus the dealer portal at https://dealerportal.truecar.com/ for a published dealer
+  or API rate card. No published plan table was found on any TrueCar host.
+plan_count: 0
+api_plans: 0
+note: >-
+  TrueCar publishes NO plans or pricing table of any kind, and there is no API to price.
+  For consumers the marketplace is free - TrueCar earns from the dealer side, not the buyer.
+  For dealers, TrueCar's commercial terms (a per-sale fee plus optional visibility/subscription
+  add-ons) are negotiated through the dealer sales organisation and the dealer portal; no rate
+  card, tier table, quota, or overage schedule is published at a public URL. The
+  Retail Solutions and TrueCar Reach pages under dealerportal.truecar.com describe products,
+  not prices. plan_count is therefore an honest zero, not a gap in this probe.
+pricing_model: >-
+  Consumer-free marketplace; dealer-side revenue via per-sale fees and subscription add-ons,
+  priced under private commercial agreement.
+plans: []
+evidence:
+- url: https://www.truecar.com/
+  status: 200
+  note: consumer product; no pricing or plans surface in the navigation or footer
+- url: https://dealerportal.truecar.com/dealer/retail-solutions
+  status: 403
+  note: >-
+    PerimeterX bot challenge answered instead of the page; the page is publicly indexed and
+    describes dealer products, but publishes no prices

@@ -1,0 +1,58 @@
+generated: '2026-08-30'
+method: probed
+source: >-
+  Live unauthenticated GET of each /.well-known/ path on every TrueCar host reachable
+  from the network profile (www.truecar.com is the only public product host; api.truecar.com
+  resolves and answers but serves no public surface).
+note: >-
+  Every probed path returned 404. No WellKnown or SecurityTxt pointer is emitted in apis.yml -
+  this file records a verified absence, not a served surface. TrueCar publishes no RFC 9116
+  security.txt, no OpenID/OAuth discovery document, no RFC 9727 api-catalog, and no agent card
+  at either the current (/.well-known/agent-card.json) or legacy (/.well-known/agent.json) path.
+hosts:
+- host: www.truecar.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.truecar.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

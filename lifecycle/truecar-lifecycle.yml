@@ -1,0 +1,81 @@
+generated: '2026-08-30'
+method: probed
+source: >-
+  Live DNS/TLS/HTTP probes of status.truecar.com, developer.truecar.com, docs.truecar.com and
+  api.truecar.com; api.github.com/orgs/TrueCar/repos; TrueCar press releases at
+  https://www.truecar.com/public-relations/press-releases/.
+note: >-
+  TrueCar publishes no API, and therefore no API versioning policy, deprecation policy,
+  Sunset/Deprecation header practice (RFC 8594), or SLA. What this file records instead is the
+  lifecycle evidence that IS observable - a dangling status-page DNS record, an archived
+  open-source organization, and a change of ownership - because each of them is a real signal
+  about the durability of anything an integrator might build against.
+versioning:
+  scheme: null
+  policy_url: null
+  note: No public API, so no version scheme is published.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation policy is published, and no Deprecation pointer is wired into apis.yml.
+sla:
+  published: false
+  url: null
+status_page:
+  published: false
+  host: status.truecar.com
+  dns: CNAME 8v75qyllyhml.stspg-customer.com (Atlassian Statuspage)
+  https_status: null
+  http_status: 302
+  redirect_target: https://www.statuspage.io
+  tls: >-
+    Handshake fails - the origin presents a certificate for CN=*.statuspage.io, which does not
+    match status.truecar.com.
+  finding: >-
+    DANGLING STATUSPAGE CNAME. TrueCar still points status.truecar.com at Atlassian Statuspage,
+    but the underlying status page no longer exists: HTTPS cannot complete a handshake, and plain
+    HTTP 302s to Statuspage's own marketing site rather than to a TrueCar status page. No
+    `StatusPage` pointer is wired into apis.yml - the surface is configured but not served, and a
+    pointer would assert a page TrueCar does not publish.
+  evidence:
+  - url: https://status.truecar.com/
+    status: 000
+    note: TLS certificate name mismatch (*.statuspage.io)
+  - url: http://status.truecar.com/
+    status: 302
+    note: 'Location: https://www.statuspage.io; response carries X-Statuspage-Version'
+  - url: https://status.truecar.com/api/v2/summary.json
+    status: 000
+    note: same TLS failure - the Statuspage JSON API is unreachable
+open_source:
+  github_org: https://github.com/TrueCar
+  archived: true
+  archived_on: '2024-11-04'
+  note: >-
+    The entire TrueCar GitHub organization was archived on 2024-11-04 and is marked
+    "no longer maintained". Every first-party package is frozen; the newest release across all
+    registries is graphql-decorate 1.0.4 (2022-08-16).
+developer_surface:
+  developer_portal: false
+  evidence:
+  - url: https://developer.truecar.com/
+    status: 404
+    note: bare CloudFront "Not Found" - the hostname resolves to the wildcard origin but serves nothing
+  - url: https://docs.truecar.com/
+    status: 404
+    note: same wildcard origin, no docs site
+corporate:
+  ownership_change:
+    event: Take-private acquisition completed
+    date: '2026-01-21'
+    acquirer: Fair Holdings, Inc.
+    consideration: USD 227,000,000 (USD 2.55 per share)
+    investors: Scott Painter (founder, returning CEO), PenFed Credit Union, Zurich North America, AutoNation, Atlantic Coast Automotive
+    delisted_from: NASDAQ (ticker TRUE)
+    source: https://www.truecar.com/public-relations/press-releases/2026-01-21-Fair-Holdings-Inc-Led-by-TrueCar-Founder-Scott-Painter-Completes-227-Million-Take-Private-Acquisition-of-TrueCar-with-PenFed-Zurich-North-America-AutoNation-and-Others/
+    note: >-
+      Relevant to lifecycle because it changes who sets product direction; new ownership has
+      stated a refocus on dealer, OEM and financial-services partnerships, which is where any
+      future TrueCar integration surface would appear.

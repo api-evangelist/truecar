@@ -1,0 +1,32 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  Search of every TrueCar public host for API documentation carrying rate-limit guidance, plus
+  live probes of https://api.truecar.com/ and https://www.truecar.com/ for RateLimit-* /
+  X-RateLimit-* response headers.
+limit_count: 0
+note: >-
+  TrueCar publishes no public API and therefore no rate limits. api.truecar.com resolves and
+  answers, but returns 404 on every probed path and emits no RateLimit-*, X-RateLimit-* or
+  Retry-After header. www.truecar.com is fronted by PerimeterX (HUMAN) bot management, which
+  answers automated clients with an HTTP 403 px-captcha interstitial rather than a documented
+  429 with a retry signal - an anti-automation control, not a published rate-limit contract.
+  An honest zero: there is no limit to record because there is no documented API surface.
+limits: []
+response_headers: []
+exhaustion_status: null
+bot_management:
+  vendor: PerimeterX (HUMAN Security)
+  observed_status: 403
+  observed_body: px-captcha interstitial
+  note: >-
+    Applies to www.truecar.com HTML paths. /robots.txt, /llms.txt, /blog/ and /.well-known/*
+    were served normally throughout the probe.
+evidence:
+- url: https://api.truecar.com/
+  status: 404
+- url: https://api.truecar.com/v1/openapi.json
+  status: 404
+- url: https://www.truecar.com/
+  status: 403
+  note: PerimeterX px-captcha interstitial after repeated automated requests
