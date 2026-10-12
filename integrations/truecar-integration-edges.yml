@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/truecar/integrations
+- https://n8n.io/integrations/truecar/
+- https://composio.dev/toolkits/truecar
+- https://monid.ai/tools/truecar
+checked:
+- https://composio.dev/toolkits/truecar
+- https://monid.ai/tools/truecar
+- https://n8n.io/integrations/truecar/
+- https://zapier.com/apps/truecar/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
